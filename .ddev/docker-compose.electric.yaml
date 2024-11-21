@@ -4,13 +4,13 @@ name: "electric_quickstart"
 services:
   electric:
     container_name: ddev-${DDEV_SITENAME}-electric
-    image: electricsql/electric
+    image: electricsql/electric:canary
     environment:
       DATABASE_URL: postgresql://db:db@db:5432/db?sslmode=disable
       LOG_LEVEL: debug
       ELECTRIC_ENABLE_INTEGRATION_TESTING: "true"
     ports:
-      - "3002:3000"
+      - "3000:3000"
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
